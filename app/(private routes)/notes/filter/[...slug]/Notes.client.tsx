@@ -4,7 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
-import { fetchNotes, FetchNotesResponse } from "@/lib/api";
+import { fetchNotes, FetchNotesResponse } from "@/lib/api/clientApi";
 import { useDebounce } from "@/hooks/useDebounce";
 import NoteList from "@/components/NoteList/NoteList";
 import SearchBox from "@/components/SearchBox/SearchBox";
