@@ -1,0 +1,54 @@
+:root {
+  --color-bg: #f8f9fa;
+  --color-bg-secondary: #fff;
+  --color-text: #232526;
+  --color-accent: #7f5af0;
+  --color-accent2: #ff6bcb;
+  --color-card: #fff;
+  --color-card-border: #e0e7ff;
+  --color-shadow: 0 4px 24px 0 rgba(60,60,60,0.10);
+  --color-sidebar: linear-gradient(135deg, #232526 0%, #414345 100%);
+  --color-footer-bg: linear-gradient(90deg, #f7f8fa 60%, #e0e7ff 100%);
+  --color-link: #7f5af0;
+  --color-link-hover: #ff6bcb;
+}
+
+[data-theme="dark"] {
+  --color-bg: #181c23;
+  --color-bg-secondary: #23272f;
+  --color-text: #f3f3f3;
+  --color-accent: #a084f7;
+  --color-accent2: #ff6bcb;
+  --color-card: #23272f;
+  --color-card-border: #232526;
+  --color-shadow: 0 4px 32px 0 rgba(0,0,0,0.30);
+  --color-sidebar: linear-gradient(135deg, #181c23 0%, #23272f 100%);
+  --color-footer-bg: linear-gradient(90deg, #23272f 60%, #181c23 100%);
+  --color-link: #a084f7;
+  --color-link-hover: #ff6bcb;
+}
+
+body {
+  font-family: var(--font-roboto), sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background 0.3s, color 0.3s;
+}
+
+#modal-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#modal-root > * {
+  pointer-events: auto;
+}

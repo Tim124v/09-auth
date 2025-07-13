@@ -1,0 +1,111 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.82);
+  color: #232526;
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 2px 24px 0 rgba(127,90,240,0.10);
+  border-radius: 0 0 22px 22px;
+  padding: 0 36px;
+  height: 62px;
+  border-bottom: 1.5px solid rgba(127,90,240,0.10);
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: #232526;
+  text-decoration: none;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.headerLogoIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #7f5af0 60%, #ff6bcb 100%);
+  box-shadow: 0 2px 8px 0 rgba(127,90,240,0.10);
+  margin-right: 4px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.headerLogo:hover, .headerLogo:focus {
+  color: #ff6bcb;
+}
+
+.navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navigationItem {
+  display: flex;
+  align-items: center;
+}
+
+.navigationLink {
+  text-decoration: none;
+  color: #232526;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+
+.navigationLink:hover, .navigationLink:focus {
+  background: linear-gradient(90deg, #7f5af0 60%, #ff6bcb 100%);
+  color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(127,90,240,0.10);
+  outline: none;
+}
+
+.navigationIcon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  filter: none;
+  transition: filter 0.18s;
+}
+
+[data-theme="dark"] .header {
+  background: rgba(24, 28, 35, 0.92);
+  color: #fff;
+  box-shadow: 0 2px 32px 0 rgba(160,132,247,0.13);
+  border-bottom: 1.5px solid rgba(160,132,247,0.10);
+}
+
+[data-theme="dark"] .headerLogo {
+  color: #fff;
+}
+
+[data-theme="dark"] .navigationLink {
+  color: #fff;
+}
+
+[data-theme="dark"] .navigationIcon {
+  filter: none;
+}
+
+

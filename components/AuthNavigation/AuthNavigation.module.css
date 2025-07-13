@@ -1,0 +1,58 @@
+.userEmail {
+  color: #232526;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.logoutButton {
+  background: transparent;
+  border: 1px solid #232526;
+  color: #232526;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #232526;
+  color: #fff;
+}
+
+[data-theme="dark"] .userEmail {
+  color: #fff;
+}
+
+[data-theme="dark"] .logoutButton {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+[data-theme="dark"] .logoutButton:hover {
+  background-color: #fff;
+  color: #232526;
+}
+  
+  .navigationItem {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navigationLink {
+    text-decoration: none;
+    color: #232526;
+    font-size: 1rem;
+  }
+  
+  .navigationLink:hover {
+    color: #7f5af0;
+  }
+
+[data-theme="dark"] .navigationLink {
+  color: #fff;
+}
+
+[data-theme="dark"] .navigationLink:hover {
+  color: #a084f7;
+}

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.42);
+  color: #232526;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-right: 1px solid rgba(127,90,240,0.10);
+  box-shadow: 2px 0 24px 0 rgba(127,90,240,0.07);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+[data-theme="dark"] .sidebar {
+  background: rgba(36, 39, 46, 0.92);
+  color: #f3f3f3;
+  border-right: 1px solid rgba(160,132,247,0.10);
+  box-shadow: 2px 0 32px 0 rgba(160,132,247,0.13);
+}
+
+.notesWrapper {
+  width: 100%;
+}
+
+
