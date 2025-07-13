@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { cookies } from 'next/headers';
 import { User } from '@/types/user';
+import type { AxiosResponse } from 'axios';
 
 const baseURL = 'https://notehub-api.goit.study';
 
@@ -38,7 +39,7 @@ export async function registerServer(email: string, password: string): Promise<U
   return response.data;
 }
 
-export async function getSessionServer(): Promise<User | null> {
+export async function getSessionServer(): Promise<AxiosResponse<User> | null> {
   const cookieStore = await cookies();
   try {
     const response = await serverApi.get<User>('/auth/session', {
@@ -46,7 +47,7 @@ export async function getSessionServer(): Promise<User | null> {
         Cookie: cookieStore.toString(),
       },
     });
-    return response.data;
+    return response;
   } catch {
     return null;
   }
