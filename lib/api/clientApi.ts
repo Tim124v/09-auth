@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Note, CreateNoteRequest } from "@/types/note";
 import { api } from "./api";
 import { User } from "@/types/user";

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { cookies } from 'next/headers';
-import { Note, CreateNoteRequest } from '@/types/note';
 import { User } from '@/types/user';
 
 const baseURL = 'https://notehub-api.goit.study';
