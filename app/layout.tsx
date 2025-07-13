@@ -5,6 +5,7 @@ import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -46,18 +47,20 @@ export default function RootLayout({
       <body className={roboto.className}>
         <ThemeProvider>
         <TanStackProvider>
-          <div
-            style={{
-              minHeight: "100vh",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <Header />
-            <main style={{ flex: 1 }}>{children}</main>
-            <Footer />
-          </div>
-          {modal}
+          <AuthProvider>
+            <div
+              style={{
+                minHeight: "100vh",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Header />
+              <main style={{ flex: 1 }}>{children}</main>
+              <Footer />
+            </div>
+            {modal}
+          </AuthProvider>
         </TanStackProvider>
         </ThemeProvider>
       </body>

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useAuthStore } from "@/lib/store/authStore";
 import css from "./EditProfilePage.module.css";
 import Image from "next/image";
+import { updateUser } from "@/lib/api/clientApi";
 
 export default function EditProfilePage() {
   const user = useAuthStore((state) => state.user);
@@ -25,13 +26,7 @@ export default function EditProfilePage() {
       return;
     }
     try {
-      const res = await fetch("/api/users/me", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: trimmed }),
-      });
-      if (!res.ok) throw new Error("Profile update error");
-      const updatedUser = await res.json();
+      const updatedUser = await updateUser({ username: trimmed });
       setUser(updatedUser);
       router.push("/profile");
     } catch (err: unknown) {

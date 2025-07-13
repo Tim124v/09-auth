@@ -32,7 +32,7 @@ export default function SignInPage() {
     try {
       const user = await login(email, password);
       setUser(user);
-      router.push("/notes");
+      router.push("/profile");
     } catch (err: unknown) {
       if (err && typeof err === "object" && "response" in err && err.response && typeof err.response === "object" && "data" in err.response) {
         setError((err.response as { data?: { message?: string } })?.data?.message || "Login error");

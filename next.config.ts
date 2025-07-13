@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
 
   images: {
     formats: ["image/webp", "image/avif"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ac.goit.global',
+      },
+    ],
   },
 
   webpack: (config, { isServer }) => {
