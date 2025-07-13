@@ -8,7 +8,6 @@ import Modal from "@/components/Modal/Modal";
 import Loader from "@/components/Loader/Loader";
 import Error from "@/components/Error/Error";
 import styles from "./NotePreview.module.css";
-import { useState } from "react";
 
 interface NotePreviewProps {
   noteId: number;
@@ -16,7 +15,6 @@ interface NotePreviewProps {
 
 export default function NotePreview({ noteId }: NotePreviewProps) {
   const router = useRouter();
-  const queryClient = useQueryClient();
 
   const {
     data: note,
