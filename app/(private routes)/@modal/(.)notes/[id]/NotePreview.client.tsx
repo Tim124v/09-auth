@@ -49,16 +49,16 @@ export default function NotePreview({ noteId }: NotePreviewProps) {
   return (
     <Modal onClose={handleClose}>
       <div className={styles.preview}>
-        <h2 className={styles.title}>{note.title}</h2>
-        <p className={styles.content}>{note.content}</p>
-        <div className={styles.meta}>
-          <div className={styles.tags}>
-            <span className={styles.tag}>{note.tag}</span>
-          </div>
-          <p className={styles.createdAt}>
-            Created: {new Date(note.createdAt).toLocaleDateString()}
-          </p>
-        </div>
+            <h2 className={styles.title}>{note.title}</h2>
+            <p className={styles.content}>{note.content}</p>
+            <div className={styles.meta}>
+              <div className={styles.tags}>
+                <span className={styles.tag}>{note.tag}</span>
+              </div>
+              <p className={styles.createdAt}>
+                Created: {new Date(note.createdAt).toLocaleDateString()}
+              </p>
+            </div>
       </div>
     </Modal>
   );

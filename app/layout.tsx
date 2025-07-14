@@ -48,18 +48,18 @@ export default function RootLayout({
         <ThemeProvider>
         <TanStackProvider>
           <AuthProvider>
-            <div
-              style={{
-                minHeight: "100vh",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Header />
-              <main style={{ flex: 1 }}>{children}</main>
-              <Footer />
-            </div>
-            {modal}
+          <div
+            style={{
+              minHeight: "100vh",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Header />
+            <main style={{ flex: 1 }}>{children}</main>
+            <Footer />
+          </div>
+          {modal}
           </AuthProvider>
         </TanStackProvider>
         </ThemeProvider>

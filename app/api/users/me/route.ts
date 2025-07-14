@@ -1,30 +1,20 @@
 export const dynamic = "force-dynamic";
 
 import { NextResponse } from "next/server";
-import { serverApi } from "@/lib/api/serverApi";
+import { api } from "../../api";
 import { cookies } from "next/headers";
 
 export async function GET() {
+  const cookieStore = await cookies();
   try {
-    const cookieStore = await cookies();
-    const accessToken = cookieStore.get("accessToken")?.value;
-
-    if (!accessToken) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const response = await serverApi.get("users/me", {
+    const { data } = await api.get("/users/me", {
       headers: {
         Cookie: cookieStore.toString(),
       },
     });
-
-    return NextResponse.json(response.data);
-  } catch (error: unknown) {
-    return NextResponse.json(
-      { error: (error instanceof Error ? error.message : "Failed to get user profile") },
-      { status: 500 }
-    );
+    if (data) return NextResponse.json(data);
+  } catch {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 }
 
@@ -33,16 +23,22 @@ export async function PATCH(request: Request) {
     const cookieStore = await cookies();
     const body = await request.json();
 
-    const response = await serverApi.patch("/users/me", body, {
+    const { data } = await api.patch("/users/me", body, {
       headers: {
         Cookie: cookieStore.toString(),
       },
     });
 
-    return NextResponse.json(response.data);
-  } catch (error: unknown) {
+    if (data) return NextResponse.json(data);
+
     return NextResponse.json(
-      { error: (error instanceof Error ? error.message : "Failed to update user") },
+      { error: "Failed to update user" },
+      { status: 500 }
+    );
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(
+      { error: "Failed to update user" },
       { status: 500 }
     );
   }

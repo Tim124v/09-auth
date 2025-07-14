@@ -9,7 +9,7 @@ const baseURL = 'https://notehub-api.goit.study';
 export const serverApi = axios.create({
   baseURL,
   withCredentials: true,
-});
+}); 
 
 export async function loginServer(email: string, password: string): Promise<User> {
   const cookieStore = await cookies();

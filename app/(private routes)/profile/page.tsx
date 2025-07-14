@@ -16,28 +16,28 @@ export default async function ProfilePage() {
   if (!user) return null;
 
   return (
-    <main className={css.mainContent}>
-      <div className={css.profileCard}>
-        <div className={css.header}>
-          <h1 className={css.formTitle}>Profile Page</h1>
+      <main className={css.mainContent}>
+        <div className={css.profileCard}>
+          <div className={css.header}>
+            <h1 className={css.formTitle}>Profile Page</h1>
           <Link href="/profile/edit" className={css.editProfileButton}>
-            Edit Profile
+              Edit Profile
           </Link>
-        </div>
-        <div className={css.avatarWrapper}>
-          <Image
+          </div>
+          <div className={css.avatarWrapper}>
+            <Image
             src={user.avatarUrl || "/default-avatar.svg"}
-            alt="User Avatar"
-            width={120}
-            height={120}
-            className={css.avatar}
-          />
+              alt="User Avatar"
+              width={120}
+              height={120}
+              className={css.avatar}
+            />
+          </div>
+          <div className={css.profileInfo}>
+            <p>Username: {user.username}</p>
+            <p>Email: {user.email}</p>
+          </div>
         </div>
-        <div className={css.profileInfo}>
-          <p>Username: {user.username}</p>
-          <p>Email: {user.email}</p>
-        </div>
-      </div>
-    </main>
+      </main>
   );
 } 
